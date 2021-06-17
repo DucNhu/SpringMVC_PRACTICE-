@@ -9,7 +9,13 @@
 </head>
 <body>
 <div class="container">
-    <a th:href="${'/admin/add-user'}">Add</a></td>
+
+    <h1>
+        List user
+        <span class="float-right">
+            <a class="btn btn-outline-primary" th:href="${'/admin/add-user'}">Add</a>
+        </span>
+        </td></h1>
     <table class="table">
         <thead>
         <tr class="text-uppercase">
@@ -26,8 +32,11 @@
             <td th:text="${item.name}"></td>
             <td th:text="${item.age}"></td>
             <td th:text="${item.salary}"></td>
-            <td class="text-center"><a th:href="${'/admin/edit-user/' + item.id}"><i class="far fa-edit"></i></a></td>
-            <td class="text-center"><a th:href="${'/admin/delete-user/' + item.id}"><i class="far fa-trash-alt"></i></a></td>
+            <td class="text-center" colspan="2">
+                <a th:href="${'/admin/edit-user/' + item.id}" class="btn btn-outline-success">Edit</a>
+                <a th:href="${'/admin/delete-user/' + item.id}" class="btn btn-outline-danger">Delete</a>
+            </td>
+
         </tr>
         </tbody>
     </table>
